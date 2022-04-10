@@ -3,6 +3,7 @@
 *::before {
   box-sizing: border-box;
 }
+
 @font-face {
   font-family: "Roboto";
   src: url("../fonts/Roboto-Bold.eot");
@@ -24,30 +25,36 @@
   font-weight: normal;
   font-style: normal;
 }
-html, 
+
+html,
 body {
-  font-family: "Roboto", sans-serif;
   font-size: 62.5%;
+  font-family: "Roboto", sans-serif;
   font-weight: normal;
   background: #171618;
   color: #ffffff;
 }
+
 img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   flex-shrink: 0;
 }
+
 ul {
   padding-left: 0;
 }
+
 ul>li {
   list-style: none;
 }
+
 a {
   text-decoration: none;
   color: inherit;
 }
+
 h1,
 h2,
 h3,
@@ -57,59 +64,71 @@ h6 {
   padding: 0;
   margin: 0;
 }
+
 button,
 input {
   outline: none;
   border: none;
   cursor: pointer;
 }
+
 .header {
   grid-area: my-header;
 }
+
 .main {
   grid-area: my-main;
 }
+
 .aside {
   grid-area: my-aside;
 }
 
 .grid {
   display: grid;
-  grid-template-areas: 
-  "my-header my-header"
-  "my-aside my-main"
-  "my-aside my-main";
+  grid-template-areas:
+    "my-header my-header my-header"
+    "my-aside my-main my-main"
+    "my-aside my-main my-main";
   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
   gap: 8rem 0;
 }
+
 .grid-init {
   max-width: 144rem;
   margin: auto;
   padding: 3rem 2.4rem 4rem;
 }
+
 .header__wrap {
   display: flex;
   align-items: center;
 }
+
 .header__logo {
   font-size: 6.4rem;
   margin-right: 7rem;
 }
+
 .header__nav {
   margin-right: 9.2rem;
 }
+
 .header__nav a {
   font-size: 2rem;
 }
+
 .header__nav a:not(:last-child) {
   margin-right: 2.5rem;
 }
+
 .header__find {
   width: 33rem;
   height: 4.1rem;
   border-radius: 0.8rem;
   margin-right: 3.9rem;
 }
+
 .header__find input {
   width: 100%;
   height: 100%;
@@ -121,26 +140,271 @@ input {
   padding-left: 1rem;
   padding-right: 4rem;
   font-size: 2rem;
+  line-height: 115%;
   color: #fff;
 }
+
 .header__find input::placeholder {
   font-size: 2rem;
   color: #fff;
 }
+
 .header__date {
   text-align: center;
   margin-right: 8.6rem;
 }
+
 .header__hour {
   font-size: 2rem;
-  
+  line-height: 117%;
+
 }
+
 .header__days {
   font-size: 1.2rem;
+  line-height: 117%;
 }
+
 .header__personal {
   width: 6rem;
   height: 6rem;
   border-radius: 50%;
 }
 
+.main-display__trailer {
+  position: relative;
+  width: 98.5%;
+  height: 28.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: url('../img/back-trailer.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 1.6rem;
+  padding: 1.9rem 0 1.9rem 1.9rem;
+
+
+}
+
+.main-display__views {
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 119%;
+}
+
+.main-display__header {
+  font-weight: 700;
+  font-style: 2.4rem;
+  line-height: 150%;
+}
+
+.main-display__date {
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 114%;
+}
+
+.button-play__wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.03);
+  width: 8.1rem;
+  height: 8.1rem;
+  border-radius: 50%;
+  /* filter: blur(1.6rem); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+}
+
+.button-play {
+  width: 0;
+  height: 0;
+  border-top: 1.5rem solid transparent;
+  border-left: 2.5rem solid #ffffff;
+  border-bottom: 1.5rem solid transparent;
+  border-radius: 0.2rem;
+
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+  padding-right: 1rem;
+}
+
+.title__left,
+.title__right {
+  display: flex;
+  align-items: center;
+}
+
+.title__left {
+  font-size: 2rem;
+  line-height: 115%;
+}
+
+.title__count {
+  padding-top: 0.3rem;
+  margin-left: 2rem;
+  color: rgba(255, 255, 255, 0.2);
+  /* font-size: 2rem;
+  line-height: 115%; */
+}
+
+.title__right span {
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.title__right img {
+  width: 2rem;
+  height: 1.6rem;
+  margin-left: 0.4rem;
+}
+
+.trending,
+.popular {
+  display: flex;
+  border-radius: 1.6rem;
+  justify-content: space-between;
+  padding-right: 1.6rem;
+}
+
+.trending__item {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  width: 47%;
+  height: 25.1rem;
+  border-radius: 1.6rem;
+  background: url(../img/trading-item-back.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center
+}
+
+.trending__footer,
+.popular__footer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.8rem 1rem 1.8rem 6.4rem;
+  border-radius: 1.6rem;
+  background: rgba(7, 4, 4, 0.3);
+}
+
+.popular__footer {
+  background: rgba(7, 4, 4, 0.5);
+  padding: .8rem 1.9rem .8rem 6.4rem;
+}
+
+.trending__header {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 150%;
+}
+
+.trending__date {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 120%;
+}
+
+.trending__time {
+  padding: 1rem 1.3rem;
+  background: #fff;
+  border-radius: 1.6rem;
+  font-size: 1.4rem;
+  line-height: 114%;
+  color: #000;
+}
+
+.trending__plash {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  font-size: 1.4rem;
+  line-height: 114%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 1.6rem;
+  padding: 0.4rem 1.3rem;
+}
+
+.small {
+  width: 5rem;
+  height: 5rem;
+  left: 7%;
+}
+
+.small-plus {
+  width: 3rem;
+  height: 3rem;
+  left: 10%;
+}
+
+.button-play__wrap.small .button-play {
+  width: 0;
+  height: 0;
+  border-top: 1rem solid transparent;
+  border-left: 2rem solid #ffffff;
+  border-bottom: 1rem solid transparent;
+  border-radius: 0.2rem;
+}
+
+.button-play__wrap.small-plus .button-play {
+  width: 0;
+  height: 0;
+  border-top: .5rem solid transparent;
+  border-left: 1rem solid #ffffff;
+  border-bottom: .5rem solid transparent;
+  border-radius: 0.2rem;
+}
+
+.popular__item {
+  display: flex;
+  align-items: flex-end;
+  width: 30%;
+  height: 19.2rem;
+  border-radius: 1.6rem;
+  background: url(../img/popular-back.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center
+}
+
+.popular__header {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 120%;
+}
+
+.popular__date {
+  font-weight: 700;
+  font-size: 0.8rem;
+  line-height: 113%;
+}
+
+.popular__rating {
+  display: flex;
+  align-items: center;
+}
+
+.popular__rating span {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 120%;
+  margin-left: 0.4rem;
+}
